@@ -1,0 +1,36 @@
+:-:-:-:-:-FINAL PROJECT-:-:-:-:-:
+
+
+:-:-:-Brief-:-:-:
+
+Create a web application using technologies that you have been learning about over the last 15 weeks.(chosen to use rails and react).
+
+
+
+:-:-:-MVP-:-:-:
+
+Users can login.
+
+Users can send and receive messages in one chat room.
+
+Messages are persisted.
+
+Make it look sick.
+
+
+
+:-:-:-Extensions-:-:-:
+
+Host externally.
+
+Users can be part of multiple chat rooms.
+
+Users can send direct messages to other users.
+
+Show a list of signed in users.
+
+Recognise http links and allow users to click on them and be taken to external web pages.
+
+Users can send emojis.
+
+Users can attach files.
