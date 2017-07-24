@@ -2,7 +2,7 @@ import React from 'react'
 import UserContainer from 'user_container'
 import MessageContainer from 'message_container'
 import GroupContainer from 'group_container'
-import InputLineContainer from 'input_line_container'
+import InputLine from '../components/input_line'
 
 class MainAndInputContainer extends React.Component {
 
@@ -10,7 +10,6 @@ class MainAndInputContainer extends React.Component {
 
 
 render() {
-
 
   return(
     <div id="main-and-input-container">
@@ -21,9 +20,11 @@ render() {
       <GroupContainer />
       </div>
 
-      <InputLineContainer />
+      <InputLine />
 
     </div>
     )
 
 }
+
+export default MainAndInputContainer
