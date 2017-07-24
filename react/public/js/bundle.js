@@ -9775,11 +9775,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_main_and_input_container__ = __webpack_require__(184);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__containers_main_and_input_container___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__containers_main_and_input_container__);
+
 
 
 
 window.onload = () => {
-  __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(document.getElementById('app'));
+  __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__containers_main_and_input_container__["default"], null), document.getElementById('app'));
 };
 
 /***/ }),
@@ -22397,6 +22400,12 @@ function traverseAllChildren(children, callback, traverseContext) {
 
 module.exports = traverseAllChildren;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (12:9)\n\n\u001b[0m \u001b[90m 10 | \u001b[39m\n \u001b[90m 11 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 | \u001b[39mrender() {\n \u001b[90m    | \u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 13 | \u001b[39m\n \u001b[90m 14 | \u001b[39m\n \u001b[90m 15 | \u001b[39m  \u001b[36mreturn\u001b[39m(\u001b[0m\n");
 
 /***/ })
 /******/ ]);
