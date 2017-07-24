@@ -2,19 +2,19 @@ import React from 'react'
 
 class OnlineUsers extends React.Component {
 
-}
 
 
-render() {
-  return(
-    <div id="online-users-container">
+  render() {
+    return(
+      <div id="online-users-container">
       <h3>Users online..</h3>
       <ul>
-        <li>{  }</li>
+      <li>{  }</li>
       </ul>
-    </div>
-    )
+      </div>
+      )
 
+  }
 }
 
 export default OnlineUsers

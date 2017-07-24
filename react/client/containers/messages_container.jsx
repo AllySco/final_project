@@ -1,22 +1,22 @@
 import React from 'react'
-import UserInfo from '../components/sent_messages'
-import UserInfo from '../components/received_messages'
+import SentMessages from '../components/sent_messages'
+import ReceivedMessages from '../components/received_messages'
 
 class MessagesContainer extends React.Component {
 
-}
 
-render() {
+  render() {
 
-return(
-  <div id="messages-container">
+    return(
+      <div id="messages-container">
 
-    <SentMessages />
-    <ReceivedMessages />
+      <SentMessages />
+      <ReceivedMessages />
 
-  </div>
-  )
+      </div>
+      )
 
+  }
 }
 
 export default MessagesContainer

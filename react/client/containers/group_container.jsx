@@ -1,22 +1,20 @@
 import React from 'react'
-import UserInfo from '../components/group_select'
-import UserInfo from '../components/group_info'
+import GroupSelect from '../components/group_select'
+import GroupInfo from '../components/group_info'
 
 class GroupContainer extends React.Component {
 
-}
+  render() {
 
-render() {
+    return(
+      <div id="group-container">
 
-return(
-  <div id="group-container">
+      <GroupSelect />
+      <GroupInfo />
 
-    <GroupSelect />
-    <GroupInfo />
-
-  </div>
-  )
-
+      </div>
+      )
+  }
 }
 
 export default GroupContainer
