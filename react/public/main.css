@@ -90,33 +90,19 @@ div#messages-container {
   height: 95%;
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: center;
   margin: 10px;
   padding: 10px;
   align-items: center;
 }
 
-div#sent-messages-container {
+div#messages-display {
   background-color: green;
-  width: 47.5%;
+  width: 90%;
   height: 95%;
   display: flex;
   flex-flow: column;
-  justify-content: space-between;
-  margin: 10px;
-  padding: 10px;
-  align-items: center;
-}
-
-div#received-messages-container {
-  background-color: green;
-  width: 47.5%;
-  height: 95%;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  margin: 10px;
-  padding: 10px;
+  justify-content: center;
   align-items: center;
 }
 
@@ -144,11 +130,6 @@ div#group-select-container {
   align-items: center;
 }
 
-div#group-select-container input {
-  width: 180px;
-  height: 30px;
-}
-
 div#group-info-container {
   background-color: hotpink;
   width: 95%;
@@ -172,14 +153,23 @@ div#input-line-container {
   align-items: center;
 }
 
-div#input-line-container input {
-  width: 600px;
+div#group-select-container input {
+  width: 180px;
   height: 30px;
-  margin: 5px;
-  font-size:1em;
 }
 
-button {
-  height: 30px;
+input.input-message {
+  width: 800px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+input.send-button{
+  width: 120px;
+  height: 40px;
+}
+
+input.group-input {
   width: 100px;
+  height: 30px;
 }

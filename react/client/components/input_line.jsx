@@ -1,36 +1,16 @@
 import React from 'react'
 
-class InputLine extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleTextChange = this.handleTextChange.bind(this)
-    this.handleOnClick = this.handleOnClick.bind(this)
-    this.state = {
-      text: ""
-    }
-  }
+const InputLine = ( { onSubmit, textKeyUp, message} ) => {
 
 
-  handleTextChange(event) {
-    this.setState( { text: event.target.value } )
-  }
-
-  handleOnClick() {
-
-  }
-
-
-  render() {
-    return(
-      <div id="input-line-container">
-      <form>
-      <input value={this.state.text} type="text" placeholder="type here...." name="messsage" onChange={this.handleTextChange}/>
-      <button type="submit" value="Post" onClick={this.handleOnClick}>Send</button>
+  return(
+    <div id="input-line-container">
+      <form onSubmit={onSubmit}>
+        <input className="input-message" type="text" placeholder="type here...." onKeyUp={textKeyUp}/>
+        <input className="send-button" type="submit" name="submit" value="Send"/>
       </form>
-      </div>
-      )
-
-  }
+    </div>
+    )
 }
 
 export default InputLine

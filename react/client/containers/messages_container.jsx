@@ -1,6 +1,5 @@
 import React from 'react'
-import SentMessages from '../components/sent_messages'
-import ReceivedMessages from '../components/received_messages'
+import Messages from '../components/messages'
 
 class MessagesContainer extends React.Component {
 
@@ -9,10 +8,7 @@ class MessagesContainer extends React.Component {
 
     return(
       <div id="messages-container">
-
-      <SentMessages />
-      <ReceivedMessages />
-
+      <Messages />
       </div>
       )
 
