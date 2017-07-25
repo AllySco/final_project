@@ -1,6 +1,6 @@
 import React from 'react'
 
-const InputLine = ( { onSubmit, textKeyUp, message} ) => {
+const InputLine = ( { onSubmit, textKeyUp, message } ) => {
 
 
   return(

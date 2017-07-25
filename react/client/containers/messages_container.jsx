@@ -1,5 +1,4 @@
 import React from 'react'
-import Messages from '../components/messages'
 
 class MessagesContainer extends React.Component {
 
@@ -8,7 +7,8 @@ class MessagesContainer extends React.Component {
 
     return(
       <div id="messages-container">
-      <Messages />
+        <h3>Foos yer Doos?</h3>
+       {this.props.messages}
       </div>
       )
 

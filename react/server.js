@@ -10,10 +10,10 @@ app.get('/', function(req, res){
 });
 
 io.on("connection", function(socket) {
-  socket.on("chat", (message) => {
+  socket.on("lobby", (message) => {
     //deal with new messages and emit to all clients.
     console.log(message)
-    io.sockets.emit("chat", message)
+    io.sockets.emit("lobby", message)
   })
 })
 

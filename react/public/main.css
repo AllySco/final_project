@@ -78,7 +78,7 @@ div#online-users-container {
   height: 60%;
   display: flex;
   flex-flow: column; 
-
+  overflow-y: scroll;
   margin: 10px;
   padding: 10px;
   align-items: center;
@@ -89,11 +89,13 @@ div#messages-container {
   width: 50%;
   height: 95%;
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: center;
+  align-self: flex-start;
   margin: 10px;
   padding: 10px;
   align-items: center;
+  overflow-y: auto;
 }
 
 div#messages-display {
@@ -128,6 +130,7 @@ div#group-select-container {
   margin: 10px;
   padding: 10px;
   align-items: center;
+  overflow-y: scroll;
 }
 
 div#group-info-container {
@@ -139,6 +142,7 @@ div#group-info-container {
   margin: 10px;
   padding: 10px;
   align-items: center;
+  overflow-y: scroll;
 }
 
 div#input-line-container {
