@@ -2,8 +2,17 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  resources :messages, defaults: {format: :json}
-  resources :chats, defaults: {format: :json}
+  scope path: "api" do
+    resources :users do
+      resources :user_chats
+    end
+    
+    resources :chats do
+      resources :user_chats
+    end
+
+    resources :messages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
