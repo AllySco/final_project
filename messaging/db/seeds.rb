@@ -13,9 +13,9 @@ User.delete_all
 Chat.delete_all
 
 
-user1 = User.create( { username: "Ally" } )
-user2 = User.create( { username: "Dan" } )
-user3 = User.create( { username: "Johnny" } )
+user1 = User.create( { username: "Ally G", email: "ally@internet.com", password: "password", password_confirmation: "password" } )
+user2 = User.create( { username: "Dan the Man", email: "dan@internet.com", password: "password", password_confirmation: "password" } )
+user3 = User.create( { username: "Crypto-Johnny", email: "johnny@internet.com", password: "password", password_confirmation: "password" } )
 
 chat1 = Chat.create( { title: "Project" } )
 chat2 = Chat.create( { title: "Weekend" } )
