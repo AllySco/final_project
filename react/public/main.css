@@ -21,7 +21,6 @@ h1 {
 
 h3 {
   margin: 10px;
-  align-items: flex-start;
 }
 
 div#main-and-input-container {
@@ -93,7 +92,7 @@ div#messages-container {
   justify-content: center;
   align-self: flex-start;
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   align-items: center;
   overflow-y: auto;
 }
@@ -157,23 +156,34 @@ div#input-line-container {
   align-items: center;
 }
 
-div#group-select-container input {
-  width: 180px;
-  height: 30px;
-}
-
-input.input-message {
+input#input-message {
+  padding-left: 7px;
   width: 800px;
   height: 40px;
   margin-right: 20px;
 }
 
-input.send-button{
+input#send-button{
+  font: 1.5em serif;
   width: 120px;
   height: 40px;
 }
 
-input.group-input {
-  width: 100px;
+input#select-group-input {
+  padding-left: 7px;
+  width: 200px;
   height: 30px;
+}
+
+input#group-input-button {
+  font: 2em serif;
+  width: 150px;
+  height: 30px;
+}
+
+form {
+  display: flex;
+  height: 90%;
+  justify-content: space-between;
+  align-items: center;
 }

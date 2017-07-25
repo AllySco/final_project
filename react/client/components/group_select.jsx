@@ -25,9 +25,9 @@ class GroupSelect extends React.Component {
       <ul>
       </ul>
       <form>
-      <input type="text" value={this.state.title} placeholder="New group name" name="new-group" onChange={this.handleTitleChange} />
+      <input id="select-group-input" type="text" value={this.state.title} placeholder="New group name" name="new-group" onChange={this.handleTitleChange} />
       </form>
-      <input className="group-input" type="submit" onClick={ this.handleOnClick } value="Add New Group" />
+      <input id="group-input-button" type="submit" onClick={ this.handleOnClick } value="Add New Group" />
 
       </div>
       )

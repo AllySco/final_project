@@ -9,11 +9,6 @@ class GroupInfo extends React.Component {
       <div id="group-info-container">
       <h3>Group Info</h3>
       
-      <ul>
-      <li>Username: {  }</li>
-      <li>Username: {  }</li>
-      </ul>
-
       </div>
       )
 
