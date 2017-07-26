@@ -13121,8 +13121,8 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
   }
 
   render() {
-    console.log(this.state.messages);
     const last5 = this.state.historicMessages.slice(this.state.historicMessages.length - 5, this.state.historicMessages.length);
+
     const last5Nodes = last5.map((message, index) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_new_message__["a" /* default */], { key: index, username: message.username, text: message.text });
     });
@@ -13137,7 +13137,7 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'h1',
         null,
-        'H\'min Fits \'ih Mineer?!'
+        'BullShit!'
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
@@ -13437,16 +13437,6 @@ class UserInfo extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         "h3",
         null,
         "Your Profile"
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "p",
-        null,
-        "Username: "
-      ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "p",
-        null,
-        "Email: "
       )
     );
   }
@@ -13505,7 +13495,7 @@ class MessagesContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "h3",
         null,
-        "Fit Like?"
+        "The future ain\u2019t what it used to be"
       ),
       this.props.messages
     );

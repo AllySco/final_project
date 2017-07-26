@@ -10,8 +10,8 @@ class MessagesContainer extends React.Component {
     return(
       <div id="messages-container">
         {this.props.last5Nodes}
-        <h3>Fit Like?</h3>
-       {this.props.messages}
+        <h3>The future ain’t what it used to be</h3>
+        {this.props.messages}
       </div>
       )
 

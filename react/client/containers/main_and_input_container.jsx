@@ -86,8 +86,8 @@ class MainAndInputContainer extends React.Component {
 
 
   render() {
-    console.log(this.state.messages)
     const last5 = this.state.historicMessages.slice((this.state.historicMessages.length-5), (this.state.historicMessages.length))
+
      const last5Nodes = last5.map((message, index) => {
      return <NewMessage key={index} username={message.username} text={message.text} />
      })
@@ -99,7 +99,7 @@ class MainAndInputContainer extends React.Component {
 
     return(
       <div id="main-and-input-container">
-      <h1>H'min Fits 'ih Mineer?!</h1>
+      <h1>BullShit!</h1>
 
       <div id="user-message-group-container">
       <UserContainer />

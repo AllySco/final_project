@@ -35,8 +35,9 @@ h3 {
 p {
   font-size: 1.3em;
   color: navy;
-  margin: 10px;
+  margin: 5px;
 }
+
 
 div#main-and-input-container {
   background-attachment: fixed;
@@ -182,15 +183,16 @@ input#select-group-input {
   text-align: center;
   color: firebrick;
   font-size: 1.4em;
-  width: 200%;
-  height: 40px;
+  width: 250px;
+  height: 50px;
 }
 
 input#group-input-button {
   background-color: rgba(225,228,225,0.5);
   color: firebrick;
-  font-size: 1.4em;
-  width: 35%;
+  height: 50px;
+  font-size: 1.3em;
+  width: 150px;
 }
 
 input#group-input-button[type="submit"]:hover {

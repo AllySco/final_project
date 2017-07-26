@@ -15,8 +15,6 @@ class UserInfo extends React.Component {
     return(
       <div id="user-info-container">
       <h3>Your Profile</h3>
-      <p>Username: {  }</p>
-      <p>Email: {  }</p>
       </div>
       )
 
