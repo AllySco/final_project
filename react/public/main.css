@@ -153,10 +153,22 @@ input#input-message {
   background-color: rgba(225,228,225,0.65);
   color: firebrick;
   font-size: 1.7em;
-  padding-left: 10px;
+  padding-left: 30px;
   width: 1000px;
   height: 50px;
   margin-right: 20px;
+}
+
+input#input-message[type="text"]:hover {
+  outline: none;
+}
+
+input#input-message[type="text"]:not(:hover) {
+  outline: none;
+}
+
+input#input-message[type="text"]:focus {
+  cursor: pointer;
 }
 
 input#send-button {
@@ -179,12 +191,24 @@ input#send-button[type="submit"]:focus {
 }
 
 input#select-group-input {
-  background-color: rgba(225,228,225,0.65);
+  background-color: rgba(225,228,225,0.5);
   text-align: center;
   color: firebrick;
   font-size: 1.4em;
   width: 250px;
   height: 50px;
+}
+
+input#select-group-input[type="text"]:hover {
+  outline: none;
+}
+
+input#select-group-input[type="text"]:not(:hover) {
+  outline: none;
+}
+
+input#select-group-input[type="text"]:focus {
+  cursor: pointer;
 }
 
 input#group-input-button {

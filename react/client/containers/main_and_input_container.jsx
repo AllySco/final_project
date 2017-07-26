@@ -86,7 +86,12 @@ class MainAndInputContainer extends React.Component {
 
 
   render() {
-    const last5 = this.state.historicMessages.slice((this.state.historicMessages.length-5), (this.state.historicMessages.length))
+    let last5
+    if(this.state.historicMessages.length > 4){
+      last5 = this.state.historicMessages.slice((this.state.historicMessages.length-5), (this.state.historicMessages.length))
+    } else {
+      last5 = this.state.historicMessages
+    }
 
      const last5Nodes = last5.map((message, index) => {
      return <NewMessage key={index} username={message.username} text={message.text} />
