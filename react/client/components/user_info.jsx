@@ -11,15 +11,12 @@ class UserInfo extends React.Component {
   }
 
 
-
   render() {
     return(
       <div id="user-info-container">
       <h3>Your Profile</h3>
-      <ul>
-      <li>Username: { this.username }</li>
-      <li>Email: { this.email } </li>
-      </ul>
+      <p>Username: {  }</p>
+      <p>Email: {  }</p>
       </div>
       )
 

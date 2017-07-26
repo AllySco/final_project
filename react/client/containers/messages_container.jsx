@@ -7,7 +7,7 @@ class MessagesContainer extends React.Component {
 
     return(
       <div id="messages-container">
-        <h3>Foos yer Doos?</h3>
+        <h3>Fit Like?</h3>
        {this.props.messages}
       </div>
       )

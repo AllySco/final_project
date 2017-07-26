@@ -10,7 +10,7 @@ class UserChatsController < ApplicationController
 
     if params[:chat_id]
       chat = Chat.find(params[:chat_id])
-      all_chats = user.all_chats
+      all_chats = chat.all_chats
       render :json => all_chats.as_json(include: :user)
     end
   end

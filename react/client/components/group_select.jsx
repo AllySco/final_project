@@ -17,7 +17,6 @@ class GroupSelect extends React.Component {
     this.setState( { title: event.target.value } )
   }
 
-
   render() {
     return(
       <div id="group-select-container">
@@ -27,7 +26,7 @@ class GroupSelect extends React.Component {
       <form>
       <input id="select-group-input" type="text" value={this.state.title} placeholder="New group name" name="new-group" onChange={this.handleTitleChange} />
       </form>
-      <input id="group-input-button" type="submit" onClick={ this.handleOnClick } value="Add New Group" />
+      <input id="group-input-button" name="submit" value="Add New Group" type="submit" onClick={ this.handleOnClick }/>
 
       </div>
       )

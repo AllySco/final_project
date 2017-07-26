@@ -31,11 +31,15 @@ class MainAndInputContainer extends React.Component {
 
   submitChat(event) {
     event.preventDefault()
-    let newMessage = { username: this.state.username, text: this.state.text }
-    event.target.children[0].value = ""
-    this.socket.emit('lobby', newMessage)
+    if (this.state.text !== null && this.state.text !== "" ) {
+      let newMessage = { username: this.state.username, text: this.state.text }
+      event.target.children[0].value = ""
+      this.socket.emit('lobby', newMessage)
+    }
+  }
 
-
+  saveMessage() {
+    
   }
 
   addMessage(message) {
@@ -45,7 +49,6 @@ class MainAndInputContainer extends React.Component {
       messages: newMessages
     })
   }
-
 
 
   render() {

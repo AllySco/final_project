@@ -13067,10 +13067,14 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
 
   submitChat(event) {
     event.preventDefault();
-    let newMessage = { username: this.state.username, text: this.state.text };
-    event.target.children[0].value = "";
-    this.socket.emit('lobby', newMessage);
+    if (this.state.text !== null && this.state.text !== "") {
+      let newMessage = { username: this.state.username, text: this.state.text };
+      event.target.children[0].value = "";
+      this.socket.emit('lobby', newMessage);
+    }
   }
+
+  saveMessage() {}
 
   addMessage(message) {
     var messages = this.state.messages;
@@ -13274,7 +13278,7 @@ class GroupSelect extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Componen
         null,
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "select-group-input", type: "text", value: this.state.title, placeholder: "New group name", name: "new-group", onChange: this.handleTitleChange })
       ),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "group-input-button", type: "submit", onClick: this.handleOnClick, value: "Add New Group" })
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("input", { id: "group-input-button", name: "submit", value: "Add New Group", type: "submit", onClick: this.handleOnClick })
     );
   }
 }
@@ -13322,8 +13326,7 @@ const NewMessage = ({ username, text }) => {
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "h3",
       null,
-      username,
-      ":"
+      username
     ),
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "p",
@@ -13395,21 +13398,14 @@ class UserInfo extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
         "Your Profile"
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        "ul",
+        "p",
         null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "li",
-          null,
-          "Username: ",
-          this.username
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "li",
-          null,
-          "Email: ",
-          this.email,
-          " "
-        )
+        "Username: "
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "p",
+        null,
+        "Email: "
       )
     );
   }
@@ -13464,7 +13460,7 @@ class MessagesContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "h3",
         null,
-        "Foos yer Doos?"
+        "Fit Like?"
       ),
       this.props.messages
     );
