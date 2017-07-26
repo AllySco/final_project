@@ -13071,10 +13071,28 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
       let newMessage = { username: this.state.username, text: this.state.text };
       event.target.children[0].value = "";
       this.socket.emit('lobby', newMessage);
+      this.saveMessage();
     }
   }
 
-  saveMessage() {}
+  saveMessage() {
+    const url = 'http://localhost:5000/api/messages/';
+    const request = new XMLHttpRequest();
+    request.open("POST", url);
+    request.setRequestHeader("Content-Type", "application/json");
+    request.onload = () => {
+      if (request.status === 201) {
+        const message = JSON.parse(request.responseText);
+        this.props.onSendMessage(message);
+      }
+    };
+    const data = {
+      message: {
+        text: this.state.text
+      }
+    };
+    request.send(JSON.stringify(data));
+  }
 
   addMessage(message) {
     var messages = this.state.messages;
@@ -13082,6 +13100,19 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
     this.setState({
       messages: newMessages
     });
+  }
+
+  loadLastFiveMessages() {
+    const url = 'http://localhost:5000/api/messages';
+    const request = new XMLHttpRequest();
+    request.open("GET", url);
+    request.onload = () => {
+      if (request.status === 200) {
+        const allMessages = JSON.parse(request.responseText);
+        return allMessages.slice(allMessages.length - 6, allMessages.length - 1);
+      }
+    };
+    request.send();
   }
 
   render() {
@@ -13102,7 +13133,7 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
         'div',
         { id: 'user-message-group-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__user_container__["a" /* default */], null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__messages_container__["a" /* default */], { messages: messages }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__messages_container__["a" /* default */], { last5: allMessages, messages: messages }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__group_container__["a" /* default */], null)
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input_line__["a" /* default */], {
@@ -13457,6 +13488,7 @@ class MessagesContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Co
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       { id: "messages-container" },
+      this.props.last5,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "h3",
         null,
