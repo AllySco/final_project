@@ -13047,6 +13047,7 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
   constructor(props) {
     super(props);
     this.state = {
+      historicMessages: [],
       messages: [],
       username: null,
       text: null
@@ -13057,6 +13058,10 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
 
     this.textKeyUp = this.textKeyUp.bind(this);
     this.submitChat = this.submitChat.bind(this);
+  }
+
+  componentDidMount() {
+    this.getMessages();
   }
 
   textKeyUp(event) {
@@ -13102,20 +13107,25 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
     });
   }
 
-  loadLastFiveMessages() {
+  getMessages() {
     const url = 'http://localhost:5000/api/messages';
     const request = new XMLHttpRequest();
     request.open("GET", url);
     request.onload = () => {
       if (request.status === 200) {
         const allMessages = JSON.parse(request.responseText);
-        return allMessages.slice(allMessages.length - 6, allMessages.length - 1);
+        this.setState({ historicMessages: allMessages });
       }
     };
     request.send();
   }
 
   render() {
+    console.log(this.state.messages);
+    const last5 = this.state.historicMessages.slice(this.state.historicMessages.length - 5, this.state.historicMessages.length);
+    const last5Nodes = last5.map((message, index) => {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_new_message__["a" /* default */], { key: index, username: message.username, text: message.text });
+    });
 
     const messages = this.state.messages.map((message, index) => {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_new_message__["a" /* default */], { key: index, username: message.username, text: message.text });
@@ -13133,7 +13143,7 @@ class MainAndInputContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.
         'div',
         { id: 'user-message-group-container' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__user_container__["a" /* default */], null),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__messages_container__["a" /* default */], { last5: allMessages, messages: messages }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__messages_container__["a" /* default */], { last5Nodes: last5Nodes, messages: messages }),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__group_container__["a" /* default */], null)
       ),
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__components_input_line__["a" /* default */], {
@@ -13483,12 +13493,15 @@ class GroupContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Compo
 
 class MessagesContainer extends __WEBPACK_IMPORTED_MODULE_0_react___default.a.Component {
 
-  render() {
+  constructor(props) {
+    super(props);
+  }
 
+  render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       "div",
       { id: "messages-container" },
-      this.props.last5,
+      this.props.last5Nodes,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         "h3",
         null,

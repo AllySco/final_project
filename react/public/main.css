@@ -186,21 +186,21 @@ input#select-group-input {
   height: 40px;
 }
 
-button#group-input-button {
+input#group-input-button {
   background-color: rgba(225,228,225,0.5);
   color: firebrick;
   font-size: 1.4em;
   width: 35%;
 }
 
-input#group-input-button[type="button"]:hover {
+input#group-input-button[type="submit"]:hover {
   outline: none;
 }
-input#group-input-button[type="button"]:not(:hover) {
+input#group-input-button[type="submit"]:not(:hover) {
   outline: none;
 }
 
-input#group-input-button[type="button"]:focus {
+input#group-input-button[type="submit"]:focus {
   cursor: pointer;
 }
 

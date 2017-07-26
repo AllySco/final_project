@@ -11,6 +11,7 @@ class MainAndInputContainer extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      historicMessages: [],
       messages: [],
       username: null,
       text: null
@@ -21,6 +22,10 @@ class MainAndInputContainer extends React.Component {
 
     this.textKeyUp = this.textKeyUp.bind(this)
     this.submitChat = this.submitChat.bind(this)
+  }
+
+  componentDidMount() {
+    this.getMessages()
   }
 
   textKeyUp(event) {
@@ -66,14 +71,14 @@ class MainAndInputContainer extends React.Component {
     })
   }
 
-  loadLastFiveMessages() {
+  getMessages() {
     const url = 'http://localhost:5000/api/messages'
     const request = new XMLHttpRequest()
     request.open("GET", url)
     request.onload = () => {
       if (request.status === 200) {
         const allMessages = JSON.parse(request.responseText)
-        return allMessages.slice(allMessages.length-6, allMessages.length-1)
+        this.setState({historicMessages: allMessages})
       }
     }
     request.send()
@@ -81,10 +86,15 @@ class MainAndInputContainer extends React.Component {
 
 
   render() {
+    console.log(this.state.messages)
+    const last5 = this.state.historicMessages.slice((this.state.historicMessages.length-5), (this.state.historicMessages.length))
+     const last5Nodes = last5.map((message, index) => {
+     return <NewMessage key={index} username={message.username} text={message.text} />
+     })
 
     const messages = this.state.messages.map((message, index) => {
       return <NewMessage key={index} username={message.username} text={message.text} />
-    });
+    })
 
 
     return(
@@ -93,7 +103,7 @@ class MainAndInputContainer extends React.Component {
 
       <div id="user-message-group-container">
       <UserContainer />
-      <MessagesContainer last5={allMessages} messages={messages} />
+      <MessagesContainer last5Nodes={last5Nodes} messages={messages} />
       <GroupContainer />
       </div>
 
